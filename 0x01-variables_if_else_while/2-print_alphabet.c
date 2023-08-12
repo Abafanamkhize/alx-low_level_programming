@@ -1,19 +1,21 @@
 #include <stdio.h>
 
-/**
- * main - Prints the lowercase  alphabets.
- *
- * Return: Always 0 (Success)
- */
 int main(void)
 {
-	char alp[26] = "abcdefghijklmnopqrstuvwxyz";
-	int i;
+    char c;
 
-	for (i = 0; i < 26; i++)
-	{
-		putchar(alp[i]);
-	}
-	putchar('\n');
-	return (0);
+    // Print the alphabet without 'q' and 'e'
+    for (c = 'a'; c <= 'z'; c++)
+    {
+        if (c != 'e' && c != 'q')
+        {
+            putchar(c);
+        }
+    }
+
+    // Print a newline character
+    putchar('\n');
+
+    return 0;
 }
+
