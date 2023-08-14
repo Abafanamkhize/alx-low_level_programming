@@ -7,42 +7,33 @@
  */
 int main(void)
 {
-int i, e, g, h, op1, op2;
+    int op1, op2;
 
-i = e = g = h = 48;
-while (h < 58)
-{
-	g = 48;
-	while (g < 58)
-	{
-		e = 48;
-		while (e < 58)
-		{
-			i = 48;
-			while (i < 58)
-			{
-				op1 = (h * 10) + g;
-				op2 = (e * 10) + i;
-				if (op1 < op2)
-				{
-					putchar(h);
-					putchar(g);
-					putchar(' ');
-					putchar(e);
-					putchar(i);
-					if (h == 57 && g == 56 && e == 57 && i == 57)
-						break;
-					putchar(',');
-					putchar(' ');
-				}
-				i++;
-			}
-			e++;
-		}
-		g++;
-	}
-	h++;
-}
-putchar('\n');
-return (0);
+    for (int h = 0; h < 10; h++)
+    {
+        for (int g = 0; g < 10; g++)
+        {
+            for (int e = 0; e < 10; e++)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    op1 = (h * 10) + g;
+                    op2 = (e * 10) + i;
+                    
+                    if (op1 < op2)
+                    {
+                        printf("%d%d %d%d", h, g, e, i);
+                        
+                        if (h == 9 && g == 8 && e == 9 && i == 9)
+                            break; // Break if we reach the last combination (99 98)
+                        
+                        printf(", ");
+                    }
+                }
+            }
+        }
+    }
+    
+    printf("\n");
+    return 0;
 }
