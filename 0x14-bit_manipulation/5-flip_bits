@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * flip_bits - counts the number of bits to change
@@ -11,15 +10,16 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int d, count = 0;
+	int i, count = 0;
 	unsigned long int current;
 	unsigned long int exclusive = n ^ m;
 
-	for (d = 63; d >= 0; d--)
+	for (i = 63; i >= 0; i--)
 	{
-		current = exclusive >> d;
+		current = exclusive >> i;
 		if (current & 1)
 			count++;
 	}
+
 	return (count);
 }
