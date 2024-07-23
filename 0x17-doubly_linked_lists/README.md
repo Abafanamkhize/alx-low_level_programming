@@ -1,1 +1,6 @@
-0x17. C - Doubly linked lists22
+<<<<<<< HEAD
+Your changes
+=======
+Remote changes
+>>>>>>> origin/master
+
